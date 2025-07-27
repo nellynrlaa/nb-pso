@@ -25,6 +25,7 @@ def prediksi_komentar(teks):
 
 # UI Streamlit
 st.title("Deteksi Komentar Cyberbullying")
+st.markdown("Oleh: **Nelly Nurul Arsy**")
 st.markdown("Model: **Naive Bayes + PSO**")
 
 input_teks = st.text_area("Masukkan komentar:", height=150)
