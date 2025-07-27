@@ -9,13 +9,19 @@ artifacts = joblib.load('nb_pso_artifacts.pkl')
 model = artifacts['model']
 selected_features_idx = artifacts['selected_features_idx']
 
-# Fungsi prediksi sederhana (preprocessing ringan)
+# Mapping label numerik ke teks
+label_mapping = {
+    0: 'noncyberbullying',
+    1: 'cyberbullying'
+}
+
+# Fungsi prediksi sederhana
 def prediksi_komentar(teks):
-    teks = teks.lower().strip()  # casefold dan hapus spasi
+    teks = teks.lower().strip()
     tfidf = vectorizer.transform([teks])
     tfidf_selected = tfidf[:, selected_features_idx]
-    hasil = model.predict(tfidf_selected)[0]
-    return hasil
+    pred_label = model.predict(tfidf_selected)[0]
+    return label_mapping.get(pred_label, "Label tidak diketahui")
 
 # UI Streamlit
 st.title("Deteksi Komentar Cyberbullying")
