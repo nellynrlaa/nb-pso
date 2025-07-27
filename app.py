@@ -11,8 +11,8 @@ selected_features_idx = artifacts['selected_features_idx']
 
 # Mapping label numerik ke teks
 label_mapping = {
-    0: 'noncyberbullying',
-    1: 'cyberbullying'
+    1: 'noncyberbullying',
+    0: 'cyberbullying'
 }
 
 # Fungsi prediksi sederhana
