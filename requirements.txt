@@ -2,3 +2,7 @@ streamlit
 scikit-learn
 joblib
 numpy
+pandas
+matplotlib
+sastrawi
+nltk
